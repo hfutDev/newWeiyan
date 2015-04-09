@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>微言合工大</title>
+	<!-- base css we need-->
+	<link rel="stylesheet" href="/css/foundation.min.css">
+	<link rel="stylesheet" href="/css/normalize.css">
+	<!-- my css-->
+	<link rel="stylesheet" href="/css/class.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/common.css">
+	<!-- html5 and mobile css for page -->
+	<script src="/js/modernizr.js"></script>
+  
+</head>
+<body>
+
+<div class="header" style="">
+  <div class="back" style="">
+    <div class="back_button" onclick="getBack()"><span>返回</span></div>
+  </div>
+</div>
+<div class="nav_and_article">
+  <!-- /*分类页的内容*/ -->
+  <div class="mian_content div_transition" id="class">
+    <!-- <div class="head_nav" >
+      <div class="nav color_sixiang nav_bg_move" id="nav_bg"></div>
+      <div class="nav nav_opacity"></div>
+      <div class="nav nav_mark active" id="1" onclick="getNav(1)">
+        <span>传统文化</span>
+      </div>
+      <div class="nav nav_mark" id="2" onclick="getNav(2)">
+        <span>价值观</span>
+      </div>
+    </div> -->
+    <div class="head_nav" >
+      <div class="nav color_sixiang nav_bg_move" id="nav_bg"></div>
+      <div class="nav nav_opacity"></div>
+      <?php
+        if ($this->col) {
+          $i = 1;
+          foreach ($this->col as $key => $col) {
+            if ($i == 1) {
+              echo '<div class="nav nav_mark active" id="'.$i.'" onclick="getNav('.$i.')"><span>'.$col['column_name'].'</span></div>';
+            }
+            else {
+              echo '<div class="nav nav_mark" id="'.$i.'" onclick="getNav('.$i.')"><span>'.$col['column_name'].'</span></div>';
+            }
+            $i++;
+          }
+        }
+      ?>
+    </div>
+    <div class="list_body">
+    <?php
+     if ($this->articleArr) {
+      $articleArr = $this->articleArr;
+      for ($i=1; $i <= $this->ul; $i++) {
+        $block = "none";//设置隐藏
+        if ($i == 1) {
+          $block = "block";
+        }
+        $article = $articleArr[$i];
+        echo '<ul class="list_all" id="list_'.$i.'" style="display:'.$block.';">';
+        $x = 1;
+        foreach ($article as $key => $value) {
+          if ($x%2 !=0) {
+            echo '<li class="list_one color_2" onclick="getArticle('.$value['id'].')"><span class="title">'.$value['title'].'</span><span class="title_pv">访问量'.$value["visited"].'</span></li>';
+          }
+          else {
+            echo '<li class="list_one color_1" onclick="getArticle('.$value['id'].')"><span class="title">'.$value['title'].'</span><span class="title_pv">访问量'.$value["visited"].'</span></li>';
+          }
+          $x++;
+        }
+        echo '</ul>';
+        
+      }
+     }
+    ?>
+    <!-- <ul class="list_all" id='list_1' style="display:block;">
+      <li class="list_one color_2" onclick="getArticle('.$value['id'].')">
+        <span class="title">纪念孔子：向“传统”要“现代”</span>
+        <span class="title_pv">访问量115</span>
+      </li>
+    </ul>
+
+    <ul class="list_all" id='list_2' style="display:none;">
+      <li class="list_one color_1" onclick="getArticle()">
+        <span class="title">所有 HTML 元素的位置都是静态的，并且无法移动。</span>
+        <span class="title_pv">访问量115</span>
+      </li>
+    </ul> -->
+  </div>
+  </div>
+  
+  
+
+
+  <!-- /*内容文章页*/ -->
+  <!--这个由json文件获取-->
+  <div class="mian_content " id="article" hide="true" style="display:none">
+    <div class="article_title">
+        <span></span>
+    </div>
+    <div class="article_info">
+      <span>来源</span>
+      <span class="from"></span>
+      <span>作者</span>
+      <span class="author"></span>
+      <span>访问量</span>
+      <span class="pv"></span>
+    </div>
+    <div class="article_content">
+      <span></span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</body>
+<script src="/js/jquery.js"></script>
+<script src="/js/yu-class.js"></script>
+ 
+</html>

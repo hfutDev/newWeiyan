@@ -1,0 +1,16 @@
+/*
+ *load css  
+ *Made by hfut online
+ *@author yu
+ */
+html,body{width:100%;height:100%;}
+.main_bg{background-image:url(../images/bg_line.png);opacity:0.1;position:absolute;left:0;top:0;width:100%;height:100%;}
+.main_content{width:100%;height:100%;font-size:2.88rem;font-family: "YouYuan";position:relative;font-weight:bold;}
+.load_rect{width:14%;float:left;position:absolute;top:24%;left:45%;height:40%;}
+
+.load_gray{color:#a0a0a0;}
+.load_red{color:#b31a25;}
+
+/**
+*加载页面暂时放置，进行首页开发
+*/

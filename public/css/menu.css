@@ -1,0 +1,52 @@
+/*
+ *side menu  
+ *Made by hfut online
+ *@author yu
+ */
+/***菜单按钮样式*/
+.yu-menu-icon{background-color:#ff5669;border-radius:0 1.5rem 1.5rem 0;-webkit-border-radius:0 1.5rem 1.5rem 0;-moz-border-radius:0 1.5rem 1.5rem 0;}
+.tab-bar, .left-small, .left-small .yu-menu-icon{width:1.5rem;height:3.0rem;text-indent:0; }
+.left-small{border-right:0;}
+.tab-bar{background-color: transparent;border:0;position:absolute;left:0;top:0;z-index:1010;font-family: "FZLTCXHJW";}
+.menu-icon h2{font-weight:normal;line-height:100%;padding-left:0.14rem;padding-top:0.48rem;font-size:1rem;}
+.off-canvas-wrap{width:100%;height:100%;}
+
+/***左部栏目样式*/
+/*ul.off-canvas-list li{padding-left:1rem;}*/
+ul.off-canvas-list  li a{border-bottom:0;}
+ul.off-canvas-list li a:hover{background:none;}
+.bg_line{list-style-type: none;  padding: 0;  margin: 0;position:absolute;left:0;top:0;width:100%;overflow:hidden;background:url(../images/bg_line.png);opacity: 0.08;}
+.off-canvas-list li .nav_line{position:absolute;background:url(../images/bg_line.png);left:0;top:0;opacity: 0.08;width:100%;height: 100%;}
+.off-canvas-list li .nav_text{position:absolute;left:0;top:0;height: 100%;width:100%;}
+
+/*导航栏目的长宽字体大小设置*/
+ul.off-canvas-list li{width: 100%;  height: 3rem;position: relative;}
+ul.off-canvas-list .nav_1 a{font-size:1.4rem;padding-top:0.4rem;padding-bottom:0.4rem;color:white;padding-left:1.666666667rem;}
+ul.off-canvas-list .nav_2 a{font-size:1.1rem;padding-top:0.4rem;padding-bottom:0.4rem;color:white;padding-left:1.666666667rem;}
+/*二级导航栏目的背景设置*/
+.color_1{background-color:#e9dfd2;}
+.color_2{background-color:#eeeeee;}
+/*二级导航栏目的字体颜色，一级导航栏目的背景*/
+.color_sixiang{background-color:#ff5669;}
+ul.off-canvas-list .font_sixiang a{color:#ff5669;}
+.color_biaobing{background-color:#00a0e9;}
+ul.off-canvas-list .font_biaobing a{color:#00a0e9;}
+.color_hanmo{background-color:#ff8c2f;}
+ul.off-canvas-list .font_hanmo a{color:#ff8c2f;}
+.color_yantu{background-color:#007c44;}
+ul.off-canvas-list .font_yantu a{color:#007c44;}
+.color_zixun{background-color:#8fc31f;}
+ul.off-canvas-list .font_zixun a{color:#8fc31f;}
+/*增加下面一段便于循环输出*/
+.color_nav1{background-color:#ff5669;}
+.color_nav2{background-color:#00a0e9;}
+.color_nav3{background-color:#ff8c2f;}
+.color_nav4{background-color:#007c44;}
+.color_nav5{background-color:#8fc31f;}
+/*结束*/
+/*去掉栏目右边框的阴影*/
+.nav_1 .exit-off-canvas{box-shadow:none;}
+.move-right .yu-off-canvas{box-shadow:none;opacity:0.4;background-color:black;}
+
+
+

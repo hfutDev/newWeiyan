@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微言合工大</title>
+  <!-- base css we need-->
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/swiper.min.css">
+  <!-- my css-->
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <!-- html5 and mobile css for page -->
+  <script src="/js/modernizr.js"></script>
+</head>
+<body>
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap yu-main">
+    
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon yu-menu-icon color_transition" id="menu-icon">
+          <h2>菜单</h2>
+        </a>
+      </section>
+    </nav>    
+
+    <aside class="left-off-canvas-menu">      
+      <ul class="off-canvas-list">
+        <!-- <li><label>Foundation</label></li> -->
+        <?php
+          if ($this->column) {
+            $i = 1;
+            foreach ($this->module as $key => $moduleV) {
+              echo '<li class="nav_1 color_nav'.$i.'"><div class="nav_line"></div><div class="nav_text"><a href="/index/module?mid='.$moduleV['id'].'">'.$moduleV['name'].'</a></div></li>';
+              $y = 1;
+              foreach ($this->column[$i] as $key => $columnV) {
+                if (($y%2)!=0) {
+                  echo '<li class="nav_2 color_1 font_sixiang"><div class="nav_line"></div><div class="nav_text"><a href="/index/module?cid='.$columnV['id'].'">'.$columnV['name'].'</a></div></li>';
+                }
+                else {
+                  echo '<li class="nav_2 color_2 font_sixiang"><div class="nav_line"></div><div class="nav_text"><a href="/index/module?cid='.$columnV['id'].'">'.$columnV['name'].'</a></div></li>';
+                }
+                $y++;
+              }
+              $i++;
+            }
+          }
+        ?>
+      </ul>
+      <!-- <div class="bg_line"></div> -->
+    </aside>
+    
+
+      <section class="main-section swiper-container" id="scroll_page">
+         <div class="swiper-wrapper">
+        <div class="main_welcome main_rect section active swiper-slide" id="1"> 
+          <div class="welcome_text">
+            <span>工大校园里的 那些事儿</span>
+          </div>
+          <div class="main_div">         
+            <div class="main_next">
+              <img  src="./images/angle_down.png" />
+            </div>
+          </div>
+        </div>
+
+        <?php
+          if ($this->module) {
+            $i = 1;
+            foreach ($this->module as $key => $value) {
+              echo '<div class="main_index'.$i.' main_rect section swiper-slide" id="sixiang"><div class="main_text color_sixiang"><h1>'.$value['name'].' <img src="/images/angle_right.png" /></h1>
+              '.$value['title'].'</div></div>';
+              $i++;
+            }
+          }
+        ?>
+
+        <div class="main_banquan main_rect section swiper-slide" id="7">
+          <div class="main_text color_banquan rect_banquan">
+            <h4>CopyRight©2006-2015</h4>
+            <h4>合肥工业大学党委学生工作部（室）</h4>
+            <h4>大学生发展网络教育中心</h4>
+            <h4>All rights reserved</h4>
+          </div>
+        </div>
+
+      </div>
+      </section>
+
+
+    <a class="exit-off-canvas yu-off-canvas"></a>
+  </div>
+
+</div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.easings.min.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/fastclick.js"></script>
+
+<script defer src="/js/swiper.jquery.min.js"></script>
+<script src="/js/yu.swiper.scroll.js"></script>
+<script>
+$(document).foundation();
+</script>
+
+</html>

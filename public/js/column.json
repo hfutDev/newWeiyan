@@ -1,0 +1,95 @@
+/**
+  zixun.column
+ */
+[
+    {
+        "column_id": "1",
+        "column_name": "励志",
+        "module_id": "2"
+    },
+    {
+        "column_id": "2",
+        "column_name": "班干",
+        "module_id": "2"
+    },
+    {
+        "column_id": "3",
+        "column_name": "党员",
+        "module_id": "2"
+    },
+    {
+        "column_id": "4",
+        "column_name": "传统文化",
+        "module_id": "1"
+    },
+    {
+        "column_id": "5",
+        "column_name": "民族",
+        "module_id": "2"
+    },
+    {
+        "column_id": "6",
+        "column_name": "书单",
+        "module_id": "3"
+    },
+    {
+        "column_id": "7",
+        "column_name": "笔记",
+        "module_id": "3"
+    },
+    {
+        "column_id": "8",
+        "column_name": "砥砺思辨",
+        "module_id": "4"
+    },
+    {
+        "column_id": "9",
+        "column_name": "智慧燃点",
+        "module_id": "4"
+    },
+    {
+        "column_id": "10",
+        "column_name": "广而告之",
+        "module_id": "4"
+    },
+    {
+        "column_id": "11",
+        "column_name": "",
+        "module_id": "5"
+    },
+    {
+        "column_id": "12",
+        "column_name": "就业",
+        "module_id": "5"
+    },
+    {
+        "column_id": "13",
+        "column_name": "勤工",
+        "module_id": "5"
+    },
+    {
+        "column_id": "14",
+        "column_name": "考研",
+        "module_id": "5"
+    },
+    {
+        "column_id": "15",
+        "column_name": "活动",
+        "module_id": "5"
+    },
+    {
+        "column_id": "16",
+        "column_name": "价值观",
+        "module_id": "1"
+    },
+    {
+        "column_id": "17",
+        "column_name": "",
+        "module_id": "1"
+    },
+    {
+        "column_id": "18",
+        "column_name": "资讯服务",
+        "module_id": "4"
+    }
+]

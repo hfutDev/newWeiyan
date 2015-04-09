@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微言合工大</title>
+  <!-- base css we need-->
+  <link rel="stylesheet" href="/foundation/css/foundation.css">
+  <link rel="stylesheet" href="/foundation/css/normalize.css">
+  <!-- my css-->
+  <link rel="stylesheet" href="/css/class.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/common.css">
+  <!-- html5 and mobile css for page -->
+  <script src="/foundation/js/vendor/modernizr.js"></script>
+  <script src="/foundation/js/vendor/jquery.js"></script>
+  <script src="/js/yu-class.js"></script>
+</head>
+<body>
+
+<div class="header" style="">
+  <div class="back" style="">
+    <div class="back_button" onclick="getBack()"><span>返回</span></div>
+  </div>  
+</div>
+<div style="width:100%;min-height:65%;position:relative;">
+  <!-- /*分类页的内容*/ -->
+  <div class="mian_content" id="class">
+    <div class="head_nav" >
+      <?php
+        if ($this->col) {
+          foreach ($this->col as $key => $col) {
+            if ($col['column_name'] == $this->colNow['column_name']) {
+              echo '<div class="nav nav_mark color_sixiang"><span>'.$col['column_name'].'</span></div>';
+            }
+            else {
+              echo '<div class="nav nav_mark color_transparent"><span>'.$col['column_name'].'</span></div>';
+            }
+          }
+        }
+      ?>
+    </div>
+    <ul class="list_all">
+      <?php
+       if ($this->paginator_articleinfo) {
+        $list = 1;
+        foreach ($this->paginator_articleinfo as $key => $value) {
+          if ( ($list%2)!=0 ) {
+            echo '<li class="list_one color_1" onclick="getArticle('.$value['id'].')"><span class="title">'.$value['title'].'</span><span class="title_pv">访问量'.$value['visited'].'</span></li>';
+          }
+          else {
+            echo '<li class="list_one color_2" onclick="getArticle('.$value['id'].')"><span class="title">'.$value['title'].'</span><span class="title_pv">访问量'.$value['visited'].'</span></li>';
+          }
+          $list++;
+        }
+       }
+        global $arrList;
+        $paginator_all=$this->paginator_all;
+        echo $this->paginationControl($this->paginator_articleinfo,
+          'Elastic',//页码样式 
+          'index/pagination_control.phtml'//页码模板
+          );
+      ?>
+    </ul>
+  </div>
+  <!-- /*内容文章页,由json文件获取*/ -->
+  <div class="mian_content" id="article" style="display:none;">
+    <div class="article_title">
+        <span></span>
+    </div>
+    <div class="article_info">
+      <span>来源</span>
+      <span class="from"></span>
+      <span>作者</span>
+      <span class="author"></span>
+      <span>访问量</span>
+      <span class="pv"></span>
+    </div>
+    <div class="article_content">
+      <span></span>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+
+
+<script src="/foundation/js/foundation.min.js"></script>
+<script src="/foundation/js/vendor/fastclick.js"></script>
+<script>
+$(document).foundation();
+</script>
+</html>

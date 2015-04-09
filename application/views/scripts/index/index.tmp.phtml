@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>微言合工大</title>
+	<!-- base css we need-->
+	<link rel="stylesheet" href="/foundation/css/foundation.css">
+	<link rel="stylesheet" href="/foundation/css/normalize.css">
+  <!-- <link rel="stylesheet" href="fullPage/jquery.fullPage.css"> -->
+	<!-- my css-->
+	<link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/menu.css">
+  <link rel="stylesheet" href="/css/common.css">
+	<!-- html5 and mobile css for page -->
+	<script src="/foundation/js/vendor/modernizr.js"></script>
+</head>
+<body>
+
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap yu-main">
+    
+    <nav class="tab-bar">
+      <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon yu-menu-icon" >
+          <h2>菜单</h2>
+        </a>
+      </section>
+    </nav>    
+
+    <aside class="left-off-canvas-menu">      
+      <ul class="off-canvas-list">
+        <!-- <li><label>Foundation</label></li> -->
+        <?php
+          if ($this->column) {
+            $i = 1;
+            foreach ($this->module as $key => $moduleV) {
+              echo '<li class="nav_1 color_nav'.$i.'"><div class="nav_line"></div><div class="nav_text"><a href="/index/column?mid='.$moduleV['id'].'">'.$moduleV['name'].'</a></div></li>';
+              $y = 1;
+              foreach ($this->column[$i] as $key => $columnV) {
+                if (($y%2)!=0) {
+                  echo '<li class="nav_2 color_1 font_sixiang"><div class="nav_line"></div><div class="nav_text"><a href="/index/column?cid='.$columnV['id'].'">'.$columnV['name'].'</a></div></li>';
+                }
+                else {
+                  echo '<li class="nav_2 color_2 font_sixiang"><div class="nav_line"></div><div class="nav_text"><a href="/index/column?cid='.$columnV['id'].'">'.$columnV['name'].'</a></div></li>';
+                }
+                $y++;
+              }
+              $i++;
+            }
+          }
+        ?>
+      </ul>
+      <!-- <div class="bg_line"></div> -->
+    </aside>
+    
+    <div class="main" id="main">
+      <section class="main-section" id="scroll_page">
+         
+        <div class="main_welcome main_rect section" id="welcome"> 
+          <div class="welcome_text">
+            <span>工大校园里的 那些事儿</span>
+          </div>
+          <div class="main_div">         
+            <div class="main_next" onclick="window.location.href='#sixiang'">
+              <img  src="/images/angle_down.png" />
+            </div>
+          </div>
+        </div>
+
+        <?php
+          if ($this->module) {
+            foreach ($this->module as $key => $value) {
+              echo '<div class="main_sixiang main_rect section" id="sixiang"><div class="main_text color_sixiang"><h1>'.$value['name'].' <img src="/images/angle_right.png" /></h1>
+              '.$value['title'].'</div></div>';
+            }
+          }
+        ?>
+        <div class="main_banquan main_rect section" >
+          <div class="main_text color_banquan">
+            <h4>CopyRight©2006-2015</h4>
+            <h4>合肥工业大学党委学生工作部（室）</h4>
+            <h4>大学生发展网络教育中心</h4>
+            <h4>All rights reserved</h4>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <a class="exit-off-canvas"></a>
+  </div>
+
+</div>
+</body>
+
+<script src="/js/jquery.js"></script>
+<script src="/fullPage/jquery.easings.min.js"></script>
+<!-- <script src="fullPage/jquery.fullPage.min.js"></script> -->
+<!-- <script src="fullPage/jquery.scrollify.js"></script> -->
+
+<script src="/foundation/js/foundation.min.js"></script>
+<!-- <script src="foundation/js/vendor/fastclick.js"></script> -->
+<!-- <script src="js/yu-touch.js"></script> -->
+<script>
+$(document).foundation();
+
+$('.off-canvas-list').ready(function(){
+  $('.bg_line').attr('style','height:'+$('.off-canvas-list').height()+'px');
+});
+
+var timer;
+$(window).resize(function() {
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      $(".section").css({"height":$(window).height()});
+    },40);
+});
+ 
+// $(function() {
+//   // $('.section').css({'height': $(window).height()});
+//   $.scrollify({
+//     section: '.section'
+//   });
+// });
+
+</script>
+ 
+</html>

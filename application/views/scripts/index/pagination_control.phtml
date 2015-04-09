@@ -1,0 +1,12 @@
+<?php
+  if ($this->previous==1)
+  	$tmp = $this->url(array('page'=>null));
+  else
+  	$tmp = $this->url(array('page'=>$this->previous));
+  if($this->previous!=null)
+  	echo "<li class='list_one color_2'><a href=\"$tmp\" class='page_href'>上一页</a></li>";
+    $tmp = $this->url(array('page'=>$this->next));
+  if($this->next!=null)
+    echo "<li class='list_one color_1'><a href=\"$tmp\" class='page_href'>下一页</a></li>";
+?>
+

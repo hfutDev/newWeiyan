@@ -1,0 +1,25 @@
+/**
+zixun.module
+ */
+[
+    {
+        "module_id": "1",
+        "module_name": "思想航标"
+    },
+    {
+        "module_id": "2",
+        "module_name": "标兵风采"
+    },
+    {
+        "module_id": "3",
+        "module_name": "翰墨书韵"
+    },
+    {
+        "module_id": "4",
+        "module_name": "人在研途"
+    },
+    {
+        "module_id": "5",
+        "module_name": "微资讯"
+    }
+]

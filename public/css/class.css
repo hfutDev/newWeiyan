@@ -1,0 +1,31 @@
+/*
+ *css for class page
+ *Made by hfut online
+ *@author yu
+ */
+body{-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
+/*栏目列表部分的css*/
+.list_all{width:100%;margin:0;}
+.list_one{width:100%;height:2.8rem;text-align:center;padding-top:0.8rem;}
+.list_one span{text-align:left;text-overflow:ellipsis;overflow:hidden;white-space: nowrap;}
+.title{float:left;display:block;height:100%;width:72%;padding-left:8%;}
+.title_pv{float:left;display:block;height:100%;width:28%;font-size:0.86rem;padding-left:4%;}
+
+/*分页按钮*/
+.page_href{display: block;width: 100%;height: 100%;}
+
+
+/*文章显示部分的css*/
+#article{background-color:#e9dfd2;padding:1.1rem 1.88rem;left:-100%;}
+.article_title span{font-size:1.6rem;color:#000;text-align: }
+.article_info span{font-size:0.6rem;margin-top:1.2rem;}
+.article_content p{font-size:0.83rem;margin-top:1.4rem;}
+
+.div_transition{transition: left 5s ease-in-out;-moz-transition: left 5s ease-in-out;-webkit-transition: left 5s ease-in-out;-o-transition: left 5s ease-in-out;}
+
+.div_animation{-webkit-animation-name: 'left_to_center';
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count:10000;}
+ 
+ 
